@@ -1,0 +1,67 @@
+# --- Entorno de Node.js / Next.js ---
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+.next/
+out/
+build/
+dist/
+
+# --- Variables de Entorno (Seguridad Crítica) ---
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.env*.local
+
+# --- Herramientas de Desarrollo y Testing ---
+.cache/
+.eslintcache
+.stylelintcache
+.prettiercache
+coverage/
+.nyc_output/
+.turbo/
+.vercel/
+
+# --- TypeScript ---
+*.tsbuildinfo
+next-env.d.ts
+
+# --- Archivos de Sistema (Arch Linux / Linux) ---
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+*~
+*.swp
+*.swo
+.fuse_hidden*
+
+# --- Logs y Temporales ---
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# --- Editores e IDEs ---
+.vscode/*
+!.vscode/extensions.json
+!.vscode/launch.json
+!.vscode/settings.json
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# --- Multimedia y Cloudinary (Relevante para tu app de inventario) ---
+# Si manejas subidas locales temporales antes de ir a Cloudinary
+public/uploads/*
+!public/uploads/.gitkeep
