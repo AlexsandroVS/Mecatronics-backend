@@ -31,8 +31,10 @@ export const env = {
     ? parsed.data.CORS_ORIGINS.split(",")
         .map((s) => s.trim())
         .filter(Boolean)
-    : []
-  ,
+        .map((s) => s.replace(/^['"`]+|['"`]+$/g, ""))
+        .map((s) => s.replace(/\/+$/, ""))
+        .filter(Boolean)
+    : [],
   jwtSecret:
     parsed.data.JWT_SECRET ??
     (process.env.NODE_ENV === "production"

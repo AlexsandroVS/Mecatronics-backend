@@ -20,7 +20,12 @@ export function createApp(opts?: { logger?: boolean }): FastifyInstance {
   });
 
   app.register(cors, {
-    origin: env.corsOrigins.length ? env.corsOrigins : true,
+    origin: (origin, cb) => {
+      if (!origin) return cb(null, true);
+      const o = origin.replace(/\/+$/, "");
+      if (!env.corsOrigins.length) return cb(null, true);
+      return cb(null, env.corsOrigins.includes(o));
+    },
     methods: ["GET", "POST", "PATCH", "DELETE", "OPTIONS"],
     optionsSuccessStatus: 204
   });
